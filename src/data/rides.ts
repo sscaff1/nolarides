@@ -134,6 +134,22 @@ const rides: Ride[] = [
     occurrence: "weekly",
     weekdays: ["Saturday"],
   },
+  {
+    id: "8",
+    name: "Friendly Friday",
+    description:
+      "A moderate pace group ride on Lakeshore Drive. Smooth rotations keep the speed steady without being all out.",
+    averageSpeed: 21,
+    maxSpeed: 26,
+    distance: 17,
+    duration: 50,
+    startTime: "6:00AM",
+    startLocation:
+      "New Orleans Museum of Art, One Collins C. Diboll Circle, City Park, New Orleans, LA 70124",
+    stravaLink: "https://www.strava.com/activities/1234567890",
+    occurrence: "weekly",
+    weekdays: ["Friday"],
+  },
 ];
 
 
