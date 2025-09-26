@@ -26,7 +26,8 @@ const rides: Ride[] = [
   {
     id: "1",
     name: "Mellow Monday",
-    description: "A loop of Lakeshore Drive",
+    description:
+      "A moderate pace group ride on Lakeshore Drive. Smooth rotations keep the speed steady without being all out.",
     averageSpeed: 21,
     maxSpeed: 26,
     distance: 17,
@@ -42,7 +43,7 @@ const rides: Ride[] = [
     id: "2",
     name: "Tuesday/Thursday Ride",
     description:
-      "A loop of Lakeshore Drive and continuing to the Lakeshore path",
+      "A steady endurance ride that begins with a Lakeshore Drive loop and extends along the lakeshore path. A solid midweek effort at a controlled pace.",
     averageSpeed: 20,
     maxSpeed: 23,
     distance: 35,
@@ -58,7 +59,7 @@ const rides: Ride[] = [
     id: "3",
     name: "Tuesday Loops",
     description:
-      "3 loops of the lakefront. Each loop is 6 miles long. Regroups at NOMA at the end of each loop. Restarts on the half hour. Only occurs when daylight savings time is in effect.",
+      "Three hard loops of the lakefront at race pace, each six miles long. Riders regroup at NOMA after every loop and restart on the half hour. Runs only during daylight savings time.",
     averageSpeed: 26,
     maxSpeed: 33,
     distance: 6,
@@ -73,7 +74,8 @@ const rides: Ride[] = [
   {
     id: "4",
     name: "WeMoRi",
-    description: "Race paced loop of the lakefront and city park.",
+    description:
+      "A full gas morning ride with a fast loop around the lakefront and through City Park. Expect attacks, rotations, and a race like feel.",
     averageSpeed: 26,
     maxSpeed: 33,
     distance: 22,
@@ -88,14 +90,14 @@ const rides: Ride[] = [
   {
     id: "5",
     name: "Giro",
-    description: "Fast paced group ride out to New Orleans East.",
+    description:
+      "The signature New Orleans weekend ride. A fast group push out to New Orleans East with a long sustained effort at high speed.",
     averageSpeed: 24,
     maxSpeed: 30,
     distance: 50,
     duration: 130,
     startTime: "7:00AM",
-    startLocation:
-      "Starbucks, 800 Harrison Ave, New Orleans, LA 70124",
+    startLocation: "Starbucks, 800 Harrison Ave, New Orleans, LA 70124",
     stravaLink: "https://www.strava.com/activities/1234567890",
     occurrence: "weekly",
     weekdays: ["Saturday", "Sunday"],
@@ -104,7 +106,7 @@ const rides: Ride[] = [
     id: "6",
     name: "Sugar Rush",
     description:
-      "A no-drop loop of the lakefront and ends with sugary treats.",
+      "A relaxed no drop ride around the lakefront that ends with a stop for sweet treats. A social spin at beginner friendly speeds.",
     averageSpeed: 15,
     maxSpeed: 20,
     distance: 15,
@@ -119,7 +121,8 @@ const rides: Ride[] = [
   {
     id: "7",
     name: "SaMoRi",
-    description: "Moderately paced group ride out to New Orleans East.",
+    description:
+      "A solid endurance ride out to New Orleans East at a moderate to fast pace. Demanding but steadier than the Giro.",
     averageSpeed: 21,
     maxSpeed: 26,
     distance: 50,
@@ -132,5 +135,6 @@ const rides: Ride[] = [
     weekdays: ["Saturday"],
   },
 ];
+
 
 export default rides;
