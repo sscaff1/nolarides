@@ -47,7 +47,7 @@ const rides: Ride[] = [
     averageSpeed: 20,
     maxSpeed: 23,
     distance: 35,
-    duration: 75,
+    duration: 105,
     startTime: "6:00AM",
     startLocation:
       "New Orleans Museum of Art, One Collins C. Diboll Circle, City Park, New Orleans, LA 70124",
@@ -60,7 +60,7 @@ const rides: Ride[] = [
     name: "Tuesday Loops",
     description:
       "Three hard loops of the lakefront at race pace, each six miles long. Riders regroup at NOMA after every loop and restart on the half hour. Runs only during daylight savings time.",
-    averageSpeed: 26,
+    averageSpeed: 25,
     maxSpeed: 33,
     distance: 6,
     duration: 25,
@@ -76,7 +76,7 @@ const rides: Ride[] = [
     name: "WeMoRi",
     description:
       "A full gas morning ride with a fast loop around the lakefront and through City Park. Expect attacks, rotations, and a race like feel.",
-    averageSpeed: 26,
+    averageSpeed: 25,
     maxSpeed: 33,
     distance: 22,
     duration: 50,
@@ -98,7 +98,8 @@ const rides: Ride[] = [
     duration: 130,
     startTime: "7:00AM",
     startLocation: "Starbucks, 800 Harrison Ave, New Orleans, LA 70124",
-    stravaLink: "https://www.strava.com/activities/1234567890",
+    stravaLink:
+      "https://www.strava.com/clubs/1760398/group_events/3406654411718425556",
     occurrence: "weekly",
     weekdays: ["Saturday", "Sunday"],
   },
@@ -146,11 +147,11 @@ const rides: Ride[] = [
     startTime: "6:00AM",
     startLocation:
       "New Orleans Museum of Art, One Collins C. Diboll Circle, City Park, New Orleans, LA 70124",
-    stravaLink: "https://www.strava.com/activities/1234567890",
+    stravaLink:
+      "https://www.strava.com/clubs/1760398/group_events/3406648113498036446",
     occurrence: "weekly",
     weekdays: ["Friday"],
   },
 ];
-
 
 export default rides;

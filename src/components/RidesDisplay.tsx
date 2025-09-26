@@ -9,6 +9,29 @@ interface RidesDisplayProps {
   rides: Ride[];
 }
 
+// Sort rides by day of the week starting with Monday
+const sortRidesByWeekday = (rides: Ride[]) => {
+  const weekdayOrder = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+  ];
+
+  return rides.toSorted((a, b) => {
+    const aFirstDay = a.weekdays[0];
+    const bFirstDay = b.weekdays[0];
+
+    const aIndex = weekdayOrder.indexOf(aFirstDay);
+    const bIndex = weekdayOrder.indexOf(bFirstDay);
+
+    return aIndex - bIndex;
+  });
+};
+
 export default function RidesDisplay({ rides }: RidesDisplayProps) {
   const [filteredRides, setFilteredRides] = useState<Ride[]>(rides);
   const [showFilters, setShowFilters] = useState(false);
@@ -16,6 +39,8 @@ export default function RidesDisplay({ rides }: RidesDisplayProps) {
   const handleFilterChange = useCallback((newFilteredRides: Ride[]) => {
     setFilteredRides(newFilteredRides);
   }, []);
+
+  const sortedRides = sortRidesByWeekday(filteredRides);
 
   return (
     <>
@@ -27,14 +52,19 @@ export default function RidesDisplay({ rides }: RidesDisplayProps) {
           className="inline-flex items-center gap-2 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300 hover:text-slate-200 px-4 py-2 rounded-lg border border-slate-600 hover:border-slate-500 transition-all duration-200"
         >
           <svg
-            className={`w-4 h-4 transition-transform duration-200 ${showFilters ? 'rotate-180' : ''}`}
+            className={`w-4 h-4 transition-transform duration-200 ${showFilters ? "rotate-180" : ""}`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             aria-label="Toggle filters"
           >
             <title>Toggle filters</title>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
           <span>Filters</span>
           {filteredRides.length !== rides.length && (
@@ -81,7 +111,7 @@ export default function RidesDisplay({ rides }: RidesDisplayProps) {
             </div>
           }
         >
-          {filteredRides.map((ride: Ride) => (
+          {sortedRides.map((ride: Ride) => (
             <RideCard key={ride.id} ride={ride} />
           ))}
         </Suspense>

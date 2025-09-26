@@ -1,7 +1,7 @@
 "use client";
 
-import { useCallback, useState, useEffect, useMemo } from "react";
-import type { Weekday, Ride } from "@/data/rides";
+import { useEffect, useMemo, useState } from "react";
+import type { Ride, Weekday } from "@/data/rides";
 
 type SpeedCategory = "casual" | "moderate" | "fast";
 type TimeOfDay = "morning" | "afternoon";
@@ -17,6 +17,20 @@ interface FilterControlsProps {
   onFilterChange: (filteredRides: Ride[]) => void;
 }
 
+// Helper functions
+const getTimeOfDay = (time: string): TimeOfDay => {
+  const hour = parseInt(time.split(":")[0], 10);
+  const isAM = time.includes("AM");
+  const hour24 = isAM ? (hour === 12 ? 0 : hour) : hour === 12 ? 12 : hour + 12;
+  return hour24 < 12 ? "morning" : "afternoon";
+};
+
+const getSpeedCategory = (avgSpeed: number): SpeedCategory => {
+  if (avgSpeed < 18) return "casual";
+  if (avgSpeed < 24) return "moderate";
+  return "fast";
+};
+
 export default function FilterControls({
   rides,
   onFilterChange,
@@ -26,26 +40,6 @@ export default function FilterControls({
     speedCategories: [],
     timeOfDay: [],
   });
-
-  // Helper functions
-  const getTimeOfDay = useCallback((time: string): TimeOfDay => {
-    const hour = parseInt(time.split(":")[0], 10);
-    const isAM = time.includes("AM");
-    const hour24 = isAM
-      ? hour === 12
-        ? 0
-        : hour
-      : hour === 12
-        ? 12
-        : hour + 12;
-    return hour24 < 12 ? "morning" : "afternoon";
-  }, []);
-
-  const getSpeedCategory = useCallback((avgSpeed: number): SpeedCategory => {
-    if (avgSpeed < 18) return "casual";
-    if (avgSpeed < 24) return "moderate";
-    return "fast";
-  }, []);
 
   // Filter rides based on current filter state
   const filteredRides = useMemo(

@@ -1,8 +1,8 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
 interface MapComponentProps {
   location: string;

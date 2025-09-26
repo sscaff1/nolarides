@@ -1,5 +1,5 @@
-import type { Ride } from "@/data/rides";
 import RidesDisplay from "@/components/RidesDisplay";
+import type { Ride } from "@/data/rides";
 
 // Simulate async data fetching - replace with database call later
 async function getRides(): Promise<Ride[]> {
@@ -7,7 +7,6 @@ async function getRides(): Promise<Ride[]> {
   const { default: rides } = await import("@/data/rides");
   return rides;
 }
-
 
 async function Home() {
   // Fetch rides data asynchronously
@@ -22,7 +21,10 @@ async function Home() {
       <div className="relative container mx-auto px-4 py-6">
         {/* Header */}
         <header className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3" style={{ fontFamily: 'var(--font-barlow-condensed)' }}>
+          <h1
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3"
+            style={{ fontFamily: "var(--font-barlow-condensed)" }}
+          >
             NOLA Cycling
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mx-auto mb-4">
@@ -34,12 +36,19 @@ async function Home() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-orange-500/25 group/strava"
           >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-label="Strava logo">
+            <svg
+              className="w-5 h-5"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-label="Strava logo"
+            >
               <title>Strava</title>
-              <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7.02 13.828h4.169"/>
+              <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7.02 13.828h4.169" />
             </svg>
             <span>Join NOLA Cycling on Strava</span>
-            <span className="group-hover/strava:translate-x-1 transition-transform">→</span>
+            <span className="group-hover/strava:translate-x-1 transition-transform">
+              →
+            </span>
           </a>
         </header>
 
@@ -50,7 +59,9 @@ async function Home() {
         <footer className="mt-20 text-center text-slate-400">
           <div className="flex items-center justify-center gap-2 mb-4">
             <div className="w-8 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
-            <span className="text-sm font-medium">Built for the New Orleans cycling community</span>
+            <span className="text-sm font-medium">
+              Built for the New Orleans cycling community
+            </span>
             <div className="w-8 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
           </div>
           <p className="text-sm">🚴‍♀️ Ride safe, ride together</p>

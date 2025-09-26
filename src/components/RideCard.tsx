@@ -18,7 +18,9 @@ const getSpeedCategory = (avgSpeed: number) => {
   return "fast";
 };
 
-const formatDuration = (minutes: number): { display: string; label: string } => {
+const formatDuration = (
+  minutes: number,
+): { display: string; label: string } => {
   if (minutes < 60) {
     return { display: minutes.toString(), label: "Min" };
   }
@@ -30,7 +32,10 @@ const formatDuration = (minutes: number): { display: string; label: string } => 
     return { display: hours.toString(), label: "Hr" };
   }
 
-  return { display: `${hours}:${remainingMinutes.toString().padStart(2, '0')}`, label: "Hr" };
+  return {
+    display: `${hours}:${remainingMinutes.toString().padStart(2, "0")}`,
+    label: "Hr",
+  };
 };
 
 export default function RideCard({ ride }: RideCardProps) {
@@ -46,9 +51,6 @@ export default function RideCard({ ride }: RideCardProps) {
           {/* Header */}
           <div className="mb-3">
             <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-lg font-bold text-slate-100 group-hover:text-white transition-colors" style={{ fontFamily: 'var(--font-barlow-condensed)' }}>
-                {ride.name}
-              </h3>
               <a
                 href={ride.stravaLink}
                 target="_blank"
@@ -56,11 +58,22 @@ export default function RideCard({ ride }: RideCardProps) {
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white p-1.5 rounded transition-all duration-200 shadow-lg hover:shadow-orange-500/25 group/strava"
                 title="View on Strava"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-label="Strava logo">
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-label="Strava logo"
+                >
                   <title>Strava</title>
-                  <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7.02 13.828h4.169"/>
+                  <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7.02 13.828h4.169" />
                 </svg>
               </a>
+              <h3
+                className="text-lg font-bold text-slate-100 group-hover:text-white transition-colors"
+                style={{ fontFamily: "var(--font-barlow-condensed)" }}
+              >
+                {ride.name}
+              </h3>
             </div>
             <p className="text-slate-300 text-sm leading-snug mb-3">
               {ride.description}
@@ -98,9 +111,7 @@ export default function RideCard({ ride }: RideCardProps) {
           <div className="flex items-center gap-4 text-sm text-slate-300 mb-3">
             <div className="flex items-center">
               <span className="text-blue-400 mr-1">📅</span>
-              <span className="text-slate-400">
-                {ride.weekdays.join(", ")}
-              </span>
+              <span className="text-slate-400">{ride.weekdays.join(", ")}</span>
             </div>
             <div className="flex items-center">
               <span className="text-orange-400 mr-1">🕐</span>
@@ -135,7 +146,6 @@ export default function RideCard({ ride }: RideCardProps) {
               <div className="text-xs text-slate-400">Max</div>
             </div>
           </div>
-
         </div>
 
         {/* Map Section */}
