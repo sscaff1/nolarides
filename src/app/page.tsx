@@ -22,15 +22,25 @@ async function Home() {
       <div className="relative container mx-auto px-4 py-6">
         {/* Header */}
         <header className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-4 shadow-xl">
-            <span className="text-2xl">🚴‍♂️</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3" style={{ fontFamily: 'var(--font-barlow-condensed)' }}>
             NOLA Rides
           </h1>
-          <p className="text-lg text-slate-300 max-w-xl mx-auto">
+          <p className="text-lg text-slate-300 max-w-xl mx-auto mb-4">
             Discover group cycling rides in New Orleans
           </p>
+          <a
+            href="https://www.strava.com/clubs/1760398"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-orange-500/25 group/strava"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-label="Strava logo">
+              <title>Strava</title>
+              <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7.02 13.828h4.169"/>
+            </svg>
+            <span>Join NOLA Cycling on Strava</span>
+            <span className="group-hover/strava:translate-x-1 transition-transform">→</span>
+          </a>
         </header>
 
         {/* Rides Display with Filtering */}
