@@ -23,7 +23,7 @@ async function Home() {
         {/* Header */}
         <header className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-3" style={{ fontFamily: 'var(--font-barlow-condensed)' }}>
-            NOLA Rides
+            NOLA Cycling
           </h1>
           <p className="text-lg text-slate-300 max-w-xl mx-auto mb-4">
             Discover group cycling rides in New Orleans

@@ -22,7 +22,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NOLA Rides - New Orleans Cycling Group Rides",
+  title: "NOLA Cycling - New Orleans Cycling Group Rides",
   description:
     "Discover group cycling rides in New Orleans. Find rides by day, speed, and time. Connect with the local cycling community.",
   keywords: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "cycling community",
   ],
   openGraph: {
-    title: "NOLA Rides - New Orleans Cycling Group Rides",
+    title: "NOLA Cycling - New Orleans Cycling Group Rides",
     description:
       "Discover group cycling rides in New Orleans. Find rides by day, speed, and time.",
     type: "website",
