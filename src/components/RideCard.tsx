@@ -18,9 +18,25 @@ const getSpeedCategory = (avgSpeed: number) => {
   return "fast";
 };
 
+const formatDuration = (minutes: number): { display: string; label: string } => {
+  if (minutes < 60) {
+    return { display: minutes.toString(), label: "Min" };
+  }
+
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+
+  if (remainingMinutes === 0) {
+    return { display: hours.toString(), label: "Hr" };
+  }
+
+  return { display: `${hours}:${remainingMinutes.toString().padStart(2, '0')}`, label: "Hr" };
+};
+
 export default function RideCard({ ride }: RideCardProps) {
   const timeOfDay = getTimeOfDay(ride.startTime);
   const speedCategory = getSpeedCategory(ride.averageSpeed);
+  const duration = formatDuration(ride.duration);
 
   return (
     <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-slate-700 hover:border-slate-600 transition-all duration-300 overflow-hidden shadow-2xl hover:shadow-slate-900/50 group">
@@ -58,9 +74,9 @@ export default function RideCard({ ride }: RideCardProps) {
             </div>
             <div className="text-center p-1.5 bg-slate-700/30 rounded border border-slate-600/50">
               <div className="text-base font-bold text-purple-400">
-                {ride.duration}
+                {duration.display}
               </div>
-              <div className="text-xs text-slate-400">Min</div>
+              <div className="text-xs text-slate-400">{duration.label}</div>
             </div>
             <div className="text-center p-1.5 bg-slate-700/30 rounded border border-slate-600/50">
               <div className="text-base font-bold text-orange-400">

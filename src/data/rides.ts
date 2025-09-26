@@ -85,6 +85,52 @@ const rides: Ride[] = [
     occurrence: "weekly",
     weekdays: ["Wednesday"],
   },
+  {
+    id: "5",
+    name: "Giro",
+    description: "Fast paced group ride out to New Orleans East.",
+    averageSpeed: 24,
+    maxSpeed: 30,
+    distance: 50,
+    duration: 130,
+    startTime: "7:00AM",
+    startLocation:
+      "Starbucks, 800 Harrison Ave, New Orleans, LA 70124",
+    stravaLink: "https://www.strava.com/activities/1234567890",
+    occurrence: "weekly",
+    weekdays: ["Saturday", "Sunday"],
+  },
+  {
+    id: "6",
+    name: "Sugar Rush",
+    description:
+      "A no-drop loop of the lakefront and ends with sugary treats.",
+    averageSpeed: 15,
+    maxSpeed: 20,
+    distance: 15,
+    duration: 60,
+    startTime: "6:00PM",
+    startLocation:
+      "New Orleans Museum of Art, One Collins C. Diboll Circle, City Park, New Orleans, LA 70124",
+    stravaLink: "https://www.strava.com/activities/1234567890",
+    occurrence: "weekly",
+    weekdays: ["Friday"],
+  },
+  {
+    id: "7",
+    name: "SaMoRi",
+    description: "Moderately paced group ride out to New Orleans East.",
+    averageSpeed: 21,
+    maxSpeed: 26,
+    distance: 50,
+    duration: 145,
+    startTime: "6:30AM",
+    startLocation:
+      "Across from Felix's, 7400 Lakeshore Dr, New Orleans, LA 70124",
+    stravaLink: "https://www.strava.com/activities/1234567890",
+    occurrence: "weekly",
+    weekdays: ["Saturday"],
+  },
 ];
 
 export default rides;
